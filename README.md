@@ -1,1 +1,0 @@
-# dia-namo-rosana
