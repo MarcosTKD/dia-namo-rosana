@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-Bt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mina Secreta do Meu Coração</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      color: #3d3d3d;
+      overflow-x: hidden;
+    }
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    button, .arrow-button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    button:hover, .arrow-button:hover {
+      transform: scale(1.05);
+    }
+    .arrow-button {
+      font-size: 2rem;
+      background: none;
+      color: #ff69b4;
+      border: none;
+    }
+    .hidden { display: none; }
+    .rose {
+      width: 200px;
+      margin-top: 2rem;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 2rem;
+    }
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .hearts {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hearts span {
+      font-size: 2rem;
+      animation: float 6s infinite;
+      position: absolute;
+      bottom: 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-ofeliasdream.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <div id="tela-inicial" class="center">
+    <h1>Você acabou de acessar a mina secreta do meu coração!</h1>
+    <p>Clique no botão abaixo para acessar meus mais profundos segredos!</p>
+    <button class="arrow-button" onclick="mostrarMensagem()">➤</button>
+  </div>
+
+  <div id="mensagem" class="center hidden">
+    <p>Bebê:<br><br>31 anos atrás, num dia dos namorados, nos beijamos a primeira vez. Imaturo que eu era, não imaginava as consequências e as responsabilidades que aquele beijo me trariam. Cometemos muitos erros neste percurso, nos magoados, te magoei muito, eu sei, mas sempre te amei. Hoje estamos onde estamos, mas ainda tenho fé na construção de algo novo e muito melhor no momento certo. Não posso mudar o passado mas posso construir um novo futuro...</p>
+    <button onclick="mostrarPergunta()">Continuar</button>
+  </div>
+
+  <div id="pergunta" class="center hidden">
+    <p>Quer lembrar de momentos onde sorrimos juntos?</p>
+    <button onclick="mostrarAlbum()">Sim</button>
+    <button onclick="mostrarRosa()">Não</button>
+  </div>
+
+  <div id="album" class="hidden">
+    <div class="gallery">
+      <img src="imagens/img1.jpg" alt="Foto 1">
+      <img src="imagens/img2.jpg" alt="Foto 2">
+      <img src="imagens/img3.jpg" alt="Foto 3">
+    </div>
+    <div class="hearts">
+      <span style="left:10%">💖</span>
+      <span style="left:30%">💕</span>
+      <span style="left:50%">💘</span>
+      <span style="left:70%">💝</span>
+      <span style="left:90%">❤️</span>
+    </div>
+  </div>
+
+  <div id="rosa" class="center hidden">
+    <p>Tudo bem! Tudo ao seu tempo.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Red_rose.png/480px-Red_rose.png" class="rose" alt="Rosa Vermelha">
+  </div>
+
+  <script>
+    function mostrarMensagem() {
+      document.getElementById('tela-inicial').classList.add('hidden');
+      document.getElementById('mensagem').classList.remove('hidden');
+    }
+    function mostrarPergunta() {
+      document.getElementById('mensagem').classList.add('hidden');
+      document.getElementById('pergunta').classList.remove('hidden');
+    }
+    function mostrarAlbum() {
+      document.getElementById('pergunta').classList.add('hidden');
+      document.getElementById('album').classList.remove('hidden');
+    }
+    function mostrarRosa() {
+      document.getElementById('pergunta').classList.add('hidden');
+      document.getElementById('rosa').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
